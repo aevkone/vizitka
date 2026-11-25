@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b0b0d">
 <title>The Start Machine — разработки и запуск бизнеса</title>
-<meta name="description" content="The Start Machine: разрабатываем IT-продукты и сразу продумываем, как их продвигать, продавать и внедрять.">
+<meta name="description" content="The Start Machine: IT-продукты, которые приносят деньги. Готовый бизнес, Контент-завод, сайты, промо-ролики, сопровождение и разработка под заказ.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23E4102B'/%3E%3Cpath d='M12 9l11 7-11 7z' fill='white'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/oswald-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -387,6 +387,48 @@ body.has-spot #spot{opacity:1}
 .stat b,.kpi b,.price b,.res b,.tl b,.dir .k,.bignum{font-weight:600}
 @media (max-width:640px){nav.top .navcta{font-size:12px;letter-spacing:.06em}}
 @media (max-width:400px){nav.top .navcta{font-size:11px;padding:9px 12px}}
+
+/* ===== v4: 8 directions, promo video, boost ===== */
+.dirs{grid-template-columns:repeat(4,minmax(0,1fr))}
+.dir{min-height:250px}
+.dir h3{font-size:22px}
+.opts{grid-template-columns:repeat(3,minmax(0,1fr))}
+.promo-grid{display:grid;grid-template-columns:1fr minmax(0,300px) minmax(0,1.5fr);gap:clamp(18px,2.4vw,32px);align-items:center}
+.promo-why{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,2.6vw,32px)}
+.promo-why h3{font-size:clamp(22px,2.2vw,28px);margin-bottom:18px}
+.why-list{display:grid;gap:14px;margin-bottom:20px}
+.why-list div{border-left:2px solid var(--red);padding-left:14px}
+.why-list b{display:block;font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.06em;font-size:17px}
+.why-list span{color:var(--muted);font-size:14.5px;line-height:1.45;display:block}
+.vid{margin:0}
+.vbox{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line2);background:#000;box-shadow:0 40px 90px -30px rgba(0,0,0,.9),0 0 0 1px rgba(228,16,43,.08)}
+.vbox video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;object-fit:cover}
+.vbox.phone{border-radius:30px;border:6px solid #1d1d22;max-width:300px;margin:0 auto}
+.vbox.phone video{aspect-ratio:9/16}
+.vplay{position:absolute;top:0;right:0;bottom:0;left:0;border:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.55));cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+.vplay span{width:78px;height:78px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 0 0 0 var(--redglow);animation:pulse 2.2s infinite;transition:transform .3s}
+.vplay span::after{content:"";border-left:22px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.vplay:hover span{transform:scale(1.1)}
+.vbox.playing .vplay{opacity:0;pointer-events:none}
+.vid figcaption{margin-top:14px;font-size:13.5px;color:var(--muted);text-align:center}
+.vid figcaption b{display:block;font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--text);font-size:16px}
+.boost{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.bc{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,border-color .35s}
+.bc:hover{transform:translateY(-6px);border-color:rgba(228,16,43,.5)}
+.bc .im{aspect-ratio:4/3;overflow:hidden}
+.bc .im img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.bc:hover .im img{transform:scale(1.06)}
+.bc .tx{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.bc .sub{font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:500;color:var(--red);text-transform:uppercase;letter-spacing:.12em;font-size:13px}
+.bc h4{font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:600;text-transform:uppercase;font-size:23px;line-height:1.1;margin:8px 0 10px}
+.bc p{color:var(--muted);font-size:14.5px;flex:1}
+.bc .gain{margin-top:16px;padding:12px 14px;border-radius:12px;background:rgba(228,16,43,.1);border:1px solid rgba(228,16,43,.3);font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:14px;color:#ffb3bd}
+.boost-bar{margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:20px;align-items:center;border-radius:22px;padding:clamp(18px,2.4vw,28px);background:linear-gradient(135deg,#1c080c,#121215 70%);border:1px solid rgba(228,16,43,.3)}
+.boost-bar b{display:block;font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:600;text-transform:uppercase;font-size:21px;line-height:1.1}
+.boost-bar span{color:var(--muted);font-size:13.5px;display:block;margin-top:4px}
+@media (max-width:1180px){.dirs{grid-template-columns:repeat(2,minmax(0,1fr))}.promo-grid{grid-template-columns:1fr 1fr}.promo-why{grid-column:1 / -1}.boost-bar{grid-template-columns:1fr 1fr 1fr}.boost-bar .btn{grid-column:1 / -1;justify-self:start}}
+@media (max-width:1020px){.opts{grid-template-columns:1fr 1fr}.boost{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.dirs,.boost,.opts,.promo-grid,.boost-bar{grid-template-columns:1fr}.dir{min-height:0}.promo-why{grid-column:auto}.boost-bar .btn{width:100%}.vbox.phone{max-width:260px}}
 @supports not (aspect-ratio:1/1){
   .cc .im{height:220px}.photo-stack{height:560px}.browser img,.stack .shot img,.media .mini img{height:auto}
 }
@@ -424,8 +466,8 @@ body.has-spot #spot{opacity:1}
     <a href="#top" class="logo"><i></i><div>The Start Machine<small>IT · МАРКЕТИНГ · ЗАПУСК</small></div></a>
     <div class="navlinks">
       <a href="#business">Готовый бизнес</a>
-      <a href="#tools">Разработки</a>
       <a href="#zavod">Контент-завод</a>
+      <a href="#promo">Промо-ролики</a>
       <a href="#support">Сопровождение</a>
       <a href="#team">Команда</a>
     </div>
@@ -439,17 +481,17 @@ body.has-spot #spot{opacity:1}
   <div class="wrap">
     <div class="hero-left">
       <span class="eyebrow">The Start Machine · Антон Кочергин и Валерия Чиркова</span>
-      <h1><span class="line"><span>Делаем</span></span><span class="line"><span>технологии,</span></span><span class="line"><span class="red">которые продают</span></span></h1>
-      <p class="lead">Разрабатываем IT-продукты и сразу продумываем, как их продвигать, продавать и внедрять. Код, смыслы и маркетинг — в одной команде.<br><br>Делаем для вас: <span class="typed" id="typed">готовый бизнес</span></p>
+      <h1><span class="line"><span>Технологии,</span></span><span class="line"><span>которые</span></span><span class="line"><span class="red">приносят деньги</span></span></h1>
+      <p class="lead">Делаем IT-продукт и сразу продумываем, как он будет продаваться. Вам не нужно искать программиста, маркетолога и продюсера по отдельности. Всё делает одна команда.<br><br>Делаем для вас: <span class="typed" id="typed">готовый бизнес</span></p>
       <div class="cta-row">
         <a href="https://t.me/valeria_chirkova" class="btn btn-red" data-msg="Здравствуйте! Хочу обсудить свой проект с The Start Machine.">Обсудить проект <span class="arr">→</span></a>
         <a href="#map" class="btn btn-ghost">Смотреть проекты</a>
       </div>
       <div class="stats">
-        <div class="stat"><b data-count="10" data-suf="+">0</b><span>бизнесов запустила наша команда</span></div>
-        <div class="stat"><b><em data-count="600">0</em>k ₽</b><span>средняя прибыль в месяц Контент-завода</span></div>
-        <div class="stat"><b data-count="14" data-suf="+">0</b><span>лет в предпринимательстве</span></div>
-        <div class="stat"><b data-count="12" data-suf="+">0</b><span>собственных IT-разработок</span></div>
+        <div class="stat"><b data-count="10" data-suf="+">0</b><span>бизнесов запустили с нуля</span></div>
+        <div class="stat"><b><em data-count="600">0</em>k ₽</b><span>в месяц приносит нам Контент-завод</span></div>
+        <div class="stat"><b>2–3 <em>нед.</em></b><span>от первого созвона до работающего завода</span></div>
+        <div class="stat"><b data-count="70" data-suf="+">0</b><span>подкастов записала Валерия в России и ОАЭ</span></div>
       </div>
     </div>
     <div class="stack" aria-hidden="true">
@@ -462,24 +504,26 @@ body.has-spot #spot{opacity:1}
 </header>
 
 <div class="marquee" aria-hidden="true"><div class="track t2"><span>Код</span><span>Смыслы</span><span>Продажи</span><span>Продвижение</span><span>Автоматизация</span><span>Код</span><span>Смыслы</span><span>Продажи</span><span>Продвижение</span><span>Автоматизация</span><span>Код</span><span>Смыслы</span><span>Продажи</span><span>Продвижение</span><span>Автоматизация</span><span>Код</span><span>Смыслы</span><span>Продажи</span><span>Продвижение</span><span>Автоматизация</span></div><div class="track">
-  <span>Готовые бизнесы</span><span>CRM</span><span>Платформы обучения</span><span>Контент-завод</span><span>Сайты</span><span>Лидогенерация</span><span>Смыслы и позиционирование</span><span>SMM</span><span>Разработка под заказ</span><span>ИИ-автоматизация</span>
-  <span>Готовые бизнесы</span><span>CRM</span><span>Платформы обучения</span><span>Контент-завод</span><span>Сайты</span><span>Лидогенерация</span><span>Смыслы и позиционирование</span><span>SMM</span><span>Разработка под заказ</span><span>ИИ-автоматизация</span>
+  <span>Готовые бизнесы</span><span>CRM</span><span>Платформы обучения</span><span>Контент-завод</span><span>Сайты</span><span>Промо-ролики</span><span>Подкасты</span><span>Мероприятия</span><span>Смыслы</span><span>Разработка под заказ</span>
+  <span>Готовые бизнесы</span><span>CRM</span><span>Платформы обучения</span><span>Контент-завод</span><span>Сайты</span><span>Промо-ролики</span><span>Подкасты</span><span>Мероприятия</span><span>Смыслы</span><span>Разработка под заказ</span>
 </div></div>
 
 <!-- MAP -->
 <section class="sec" id="map">
   <div class="wrap">
     <div class="sec-head">
-      <div><span class="eyebrow">Что мы делаем</span><h2 class="rv">Шесть направлений.<br><span class="red">Одна команда.</span></h2></div>
-      <p class="rv d1">Мы не просто пишем код. Каждую разработку упаковываем так, чтобы её можно было продвигать, продавать и внедрять — у себя или у клиента.</p>
+      <div><span class="eyebrow">Что мы делаем</span><h2 class="rv">Выберите, что нужно <span class="red">вашему бизнесу</span></h2></div>
+      <p class="rv d1">Восемь способов получить клиентов и деньги быстрее. Каждый из них мы сначала проверили на своих бизнесах и только потом стали предлагать другим.</p>
     </div>
     <div class="dirs">
-      <a href="#business" class="dir wide rv"><span class="k">01</span><h3>Готовый бизнес под ключ</h3><p>Технология + логика продвижения и продаж. Генеалогические услуги и серверный Контент-завод 2.0 — забираете и зарабатываете.</p><span class="go">Смотреть →</span></a>
-      <a href="#tools" class="dir rv d1"><span class="k">02</span><h3>Разработки для ваших задач</h3><p>CRM для производства, платформа видеоуроков и эфиров. Закрывают потребности бизнеса сразу.</p><span class="go">Смотреть →</span></a>
-      <a href="#zavod" class="dir rv d2"><span class="k">03</span><h3>Контент-завод</h3><p>Наш основной продукт: коробочная система, которая сама делает и публикует контент.</p><span class="go">Смотреть →</span></a>
-      <a href="#sites" class="dir rv d3"><span class="k">04</span><h3>Сайты и лидогенерация</h3><p>Сайты уровня thestartmachine.ru и игры, которые раскрывают потребности клиента.</p><span class="go">Смотреть →</span></a>
-      <a href="#support" class="dir rv d4"><span class="k">05</span><h3>Сопровождение</h3><p>Позиционирование, продуктовая линейка, цены, смыслы и система продвижения.</p><span class="go">Смотреть →</span></a>
-      <a href="#custom" class="dir wide rv"><span class="k">06</span><h3>Любая разработка под заказ</h3><p>SaaS-сервисы, мини-приложения, аналитика, торговые панели, автоматизация с ИИ — продумываем и делаем под вашу задачу.</p><span class="go">Смотреть →</span></a>
+      <a href="#business" class="dir rv"><span class="k">01</span><h3>Бизнес, который уже собран</h3><p>Технология и план продаж. Генеалогия или подписочный Контент-завод 2.0: запускаете продажи и зарабатываете.</p><span class="go">Смотреть →</span></a>
+      <a href="#tools" class="dir rv d1"><span class="k">02</span><h3>Порядок в заявках и обучении</h3><p>CRM для производства и платформа уроков. Ставите у себя, и хаос заканчивается.</p><span class="go">Смотреть →</span></a>
+      <a href="#zavod" class="dir rv d2"><span class="k">03</span><h3>Контент каждый день без SMM-специалиста</h3><p>Вы снимаете видео на телефон. Завод собирает ролики и карусели и публикует их сам.</p><span class="go">Смотреть →</span></a>
+      <a href="#sites" class="dir rv d3"><span class="k">04</span><h3>Сайт, который приводит заявки</h3><p>А ещё игра-диагностика: клиент сам понимает, что ему нужна ваша услуга.</p><span class="go">Смотреть →</span></a>
+      <a href="#promo" class="dir rv"><span class="k">05</span><h3>Ролик, после которого покупают</h3><p>Моушен-видео за минуту объясняет вашу услугу клиенту или инвестору.</p><span class="go">Смотреть →</span></a>
+      <a href="#support" class="dir rv d1"><span class="k">06</span><h3>Ясно, что и за сколько продавать</h3><p>Позиционирование, продуктовая линейка, цены и смыслы. Ведём вас до первых продаж.</p><span class="go">Смотреть →</span></a>
+      <a href="#boost" class="dir rv d2"><span class="k">07</span><h3>Вас узнают на рынке</h3><p>Подкаст, офлайн-мероприятие или выступление под ключ. Вам начинают доверять раньше, чем вы начали продавать.</p><span class="go">Смотреть →</span></a>
+      <a href="#custom" class="dir rv d3"><span class="k">08</span><h3>Разработка под вашу задачу</h3><p>Сервис, бот, приложение, автоматизация с ИИ. И сразу план, как на этом заработать.</p><span class="go">Смотреть →</span></a>
     </div>
   </div>
 </section>
@@ -490,7 +534,7 @@ body.has-spot #spot{opacity:1}
     <div class="cat-title">
       <span class="tag">01</span>
       <div><h2 class="rv">Готовый бизнес <span class="red">под ключ</span></h2>
-      <p class="rv d1">Делаем техническую часть и сразу продумываем логику продвижения, продажи и реализации. На выходе — не программа, а модель, на которой можно зарабатывать.</p></div>
+      <p class="rv d1">Вы получаете не просто программу, а технологию, план продвижения и понятную модель заработка. Остаётся запустить продажи.</p></div>
     </div>
 
     <article class="proj">
@@ -501,16 +545,17 @@ body.has-spot #spot{opacity:1}
       <div class="info rv d1">
         <div class="sub">Бизнес на генеалогических услугах</div>
         <h3>Летопись рода</h3>
-        <p>Сервис, который превращает историю семьи в продукт: конструктор древа, сайт семьи, постер А1–А3 и презентация. Вырос из нашего собственного семейного проекта.</p>
+        <p>Люди готовы платить за историю своей семьи. Сервис превращает поиск по архивам в продукт, который легко продать: сайт рода, постер А1–А3 и презентацию.</p>
         <ul>
-          <li>Наше древо: 687 человек, 15 поколений, 43 фамилии, 5 стран</li>
-          <li>Родные сами добавляют фото и воспоминания</li>
-          <li>Загрузка GEDCOM, Excel или сборка вручную</li>
+          <li>Проверено на нашей семье: 687 человек, 15 поколений, 5 стран</li>
+          <li>Родные сами добавляют фото и воспоминания, без вашего участия</li>
+          <li>Загружаете файл GEDCOM или таблицу Excel, и древо строится само</li>
         </ul>
         <div class="chips"><span class="chip hot">Готовая бизнес-модель</span><span class="chip">Для генеалогов, студий, семей</span></div>
         <div class="links">
           <a class="lnk main" href="https://aevkone.github.io/rodkonstruktor/" target="_blank" rel="noopener">Сервис «Летопись рода» <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-          <a class="lnk" href="https://aevkone.github.io/roddrevo/" target="_blank" rel="noopener">Пример: наше древо <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="lnk" href="https://aevkone.github.io/roddrevo/" target="_blank" rel="noopener">Наше древо <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="lnk" href="#promo">Промо-ролик ↓</a>
         </div>
       </div>
     </article>
@@ -523,16 +568,17 @@ body.has-spot #spot{opacity:1}
       <div class="info rv d1">
         <div class="sub">Бизнес на подписке · серверная версия</div>
         <h3>Контент-завод 2.0</h3>
-        <p>Контент-завод, заточенный под готовый бизнес: работает на сервере, клиенты подключаются по подписке через Telegram. Вы продвигаете — сервис приносит выручку.</p>
+        <p>Сервис, за который клиенты платят каждый месяц. Он работает на сервере, а клиенты подключаются через Telegram. Ваша задача — приводить клиентов. Остальное делает программа.</p>
         <ul>
-          <li>Бот-подарок: первый ролик для клиента — сразу после регистрации</li>
-          <li>Пульт в Telegram: план, утверждение, публикации, тарифы</li>
-          <li>Финмодель серверной версии: себестоимость клиента, юнит-экономика, безубыточность и прогноз на 12 месяцев</li>
+          <li>По финмодели все расходы окупаются уже с 3 подписчиков</li>
+          <li>После прямых расходов у вас остаётся 82,5% каждого платежа</li>
+          <li>Бот-подарок делает клиенту первый ролик ещё до оплаты</li>
         </ul>
         <div class="chips"><span class="chip hot">Подписочная модель</span><span class="chip">Сервер + Telegram</span><span class="chip">Финмодель</span></div>
         <div class="links">
           <a class="lnk main" href="https://aevkone.github.io/kz-ekrany/" target="_blank" rel="noopener">Демо экранов <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           <a class="lnk" href="https://aevkone.github.io/kontent-zavod-finmodel/server-2-0/" target="_blank" rel="noopener">Финмодель 2.0 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="lnk" href="#promo">Ролик для инвестора ↓</a>
         </div>
       </div>
     </article>
@@ -544,8 +590,8 @@ body.has-spot #spot{opacity:1}
   <div class="wrap">
     <div class="cat-title">
       <span class="tag">02</span>
-      <div><h2 class="rv">Разработки, которые <span class="red">закрывают задачи</span></h2>
-      <p class="rv d1">Готовые системы, которыми можно пользоваться для своих прямых целей — без отдельной монетизации. Берёте и закрываете потребность бизнеса.</p></div>
+      <div><h2 class="rv">Готовые системы <span class="red">для ваших задач</span></h2>
+      <p class="rv d1">Эти системы не нужно продавать. Вы ставите их у себя и сразу решаете проблему: заявки не теряются, ученики не путаются.</p></div>
     </div>
     <div class="pair">
       <article class="proj">
@@ -553,11 +599,11 @@ body.has-spot #spot{opacity:1}
         <div class="info rv d1">
           <div class="sub">Для производственных компаний</div>
           <h3>CRM для производства</h3>
-          <p>Продажи, производство и сервис в одном окне. Заявки не теряются, ТКП считается за минуты, видно, где заказ на производстве.</p>
+          <p>Заявки больше не теряются. Коммерческое предложение считается за минуты, а не за дни. Директор в любой момент видит, где каждый заказ.</p>
           <ul>
-            <li>Входящие из сайта, почты и мессенджеров с ИИ-помощником</li>
-            <li>Конфигуратор и ТКП на RU/EN в трёх валютах</li>
-            <li>Доска производства: план/факт, просрочки, уведомления</li>
+            <li>Все заявки с сайта, почты и мессенджеров в одном окне, с ИИ-помощником</li>
+            <li>Расчёт и КП на русском и английском в трёх валютах</li>
+            <li>Доска производства: план и факт, просрочки, уведомления</li>
           </ul>
           <div class="chips"><span class="chip">Открытый код на GitHub</span><span class="chip">Роли: директор, продажи, мастер</span></div>
           <div class="links">
@@ -573,13 +619,13 @@ body.has-spot #spot{opacity:1}
         <div class="info rv d1">
           <div class="sub">Для экспертов и онлайн-школ</div>
           <h3>Платформа уроков и эфиров</h3>
-          <p>Сделали для школы классической астрологии: уроки, эфиры, записи и ученики — в одном месте, в цветах школы, без сложных сервисов.</p>
+          <p>Уроки, эфиры, записи и ученики собраны в одном месте и оформлены в ваших цветах. Не нужны Zoom, таблицы и десяток вкладок. Сделали её для школы классической астрологии.</p>
           <ul>
             <li>Эфир ведущей: экран, камера, чат, поднятые руки</li>
             <li>Записи уроков с субтитрами и скачиванием</li>
-            <li>Бот ученика и панель: расписание, переносы</li>
+            <li>Бот для учеников и панель с расписанием и переносами</li>
           </ul>
-          <div class="chips"><span class="chip">Видеоуроки</span><span class="chip">Прямые эфиры</span><span class="chip">Экскурсия по кнопкам</span></div>
+          <div class="chips"><span class="chip">Видеоуроки</span><span class="chip">Прямые эфиры</span><span class="chip">Подсказки на каждом экране</span></div>
           <div class="links">
             <a class="lnk main" href="https://aevkone.github.io/shkola-efir-demo/" target="_blank" rel="noopener">Открыть демо <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </div>
@@ -594,21 +640,21 @@ body.has-spot #spot{opacity:1}
   <div class="wrap">
     <div class="cat-title">
       <span class="tag">03</span>
-      <div><h2 class="rv">Наш основной продукт</h2>
-      <p class="rv d1">Коробочная версия Контент-завода. Его мы продаём и продвигаем сами — и на нём построен наш собственный бизнес.</p></div>
+      <div><h2 class="rv">Наш главный продукт</h2>
+      <p class="rv d1">Мы сами продаём Контент-завод и сами на нём зарабатываем: в среднем 600 000 ₽ прибыли в месяц. Это коробочная версия, которую мы ставим вам.</p></div>
     </div>
     <div class="flag rv">
       <div class="flag-grid">
         <div>
           <span class="eyebrow">Контент-завод The Start Machine</span>
-          <h3>Ты задаёшь смыслы — <span class="red">завод делает контент</span></h3>
-          <p style="color:#d4d4d8">Берёт ваши фото и видео с телефона, собирает ролики, карусели, сторис и посты в вашем стиле и публикует по расписанию во все соцсети. Без ИИ-аватаров: в контенте — вы. Заменяет СММ-специалиста и маркетолога.</p>
+          <h3>Вы снимаете видео — <span class="red">завод делает контент</span></h3>
+          <p style="color:#d4d4d8">Завод берёт ваши видео и фото с телефона, делает из них ролики, карусели, сторис и посты в вашем стиле и сам публикует во все соцсети. В кадре вы, а не ИИ-аватар. Он берёт на себя работу SMM-специалиста и маркетолога.</p>
           <div class="kpis">
             <div class="kpi"><b>67</b><span>ниш в базе смыслов</span></div>
-            <div class="kpi"><b>2–3 нед.</b><span>внедрение под ключ</span></div>
-            <div class="kpi"><b>85%</b><span>работы по контенту берёт завод</span></div>
+            <div class="kpi"><b>2–3 нед.</b><span>и завод работает у вас</span></div>
+            <div class="kpi"><b>85%</b><span>работы с контентом завод делает за вас</span></div>
           </div>
-          <div class="price"><b>169 999 ₽</b><span>один раз · программа в вашей собственности<br>или от 42 500 ₽/мес в рассрочку</span></div>
+          <div class="price"><b>169 999 ₽</b><span>один раз · программа остаётся у вас навсегда<br>или от 42 500 ₽ в месяц в рассрочку</span></div>
           <div class="links">
             <a class="lnk main" href="https://thestartmachine.ru/" target="_blank" rel="noopener">thestartmachine.ru <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             <a class="lnk" href="#contact" data-msg="Здравствуйте! Хочу обсудить внедрение Контент-завода.">Хочу завод</a>
@@ -617,9 +663,9 @@ body.has-spot #spot{opacity:1}
         <div class="media">
           <div class="browser rv-img"><div class="bar"><i></i><i></i><i></i><u>thestartmachine.ru</u></div><img src="img/startmachine.jpg" alt="Сайт Контент-завода" loading="lazy"></div>
           <div class="steps3" style="margin-top:22px">
-            <div><b>Распаковка</b>книга смыслов и контент-план</div>
-            <div><b>Установка</b>стиль, соцсети, автопостинг</div>
-            <div><b>Запуск</b>обучение и первые публикации</div>
+            <div><b>Распаковка</b>один созвон, и смыслы готовы</div>
+            <div><b>Установка</b>всё настраиваем за вас</div>
+            <div><b>Запуск</b>вы только нажимаете «ок»</div>
           </div>
         </div>
       </div>
@@ -633,16 +679,16 @@ body.has-spot #spot{opacity:1}
     <div class="cat-title">
       <span class="tag">04</span>
       <div><h2 class="rv">Сайты и <span class="red">лидогенерация</span></h2>
-      <p class="rv d1">Сайты, которые объясняют и продают, и интерактивные инструменты, которые сами приводят клиентов и раскрывают их потребности.</p></div>
+      <p class="rv d1">Сайт должен приводить заявки, а не просто висеть в интернете. А интерактивные инструменты делают так, что клиент сам приходит к покупке.</p></div>
     </div>
     <div class="pair">
       <article class="proj">
         <div class="media rv"><div class="browser rv-img"><div class="bar"><i></i><i></i><i></i><u>thestartmachine.ru</u></div><img src="img/startmachine.jpg" alt="Сайт thestartmachine.ru" loading="lazy"></div></div>
         <div class="info rv d1">
-          <div class="sub">Уровень наших сайтов</div>
-          <h3>Сайты под ключ</h3>
-          <p>Пример — thestartmachine.ru: живые карусели, сравнение «было → стало», интерактивная карта продукта, подбор ниши и заявки в Telegram. Ещё пример — сайт психолога, подключённый к Контент-заводу: новый ретрит добавляется одним сообщением.</p>
-          <div class="chips"><span class="chip">Моушен и интерактив</span><span class="chip">Мобильная версия</span><span class="chip">Связка с контентом</span></div>
+          <div class="sub">Вот такого уровня сайты мы делаем</div>
+          <h3>Сайты, которые продают</h3>
+          <p>Откройте thestartmachine.ru: живые карусели, сравнение «было → стало», подбор ниши и заявки прямо в Telegram. Сайт психолога связан с Контент-заводом: новый ретрит появляется на сайте после одного сообщения.</p>
+          <div class="chips"><span class="chip">Анимация</span><span class="chip">Удобно с телефона</span><span class="chip">Связан с контентом</span></div>
           <div class="links">
             <a class="lnk main" href="https://thestartmachine.ru/" target="_blank" rel="noopener">thestartmachine.ru <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             <a class="lnk" href="https://aevkone.github.io/yulia-pavlova/" target="_blank" rel="noopener">Сайт психолога <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -652,13 +698,13 @@ body.has-spot #spot{opacity:1}
       <article class="proj">
         <div class="media rv"><div class="browser rv-img"><div class="bar"><i></i><i></i><i></i><u>aevkone.github.io/igra-psy-demo</u></div><img src="img/igra.jpg" alt="Игра для психологов" loading="lazy"></div></div>
         <div class="info rv d1">
-          <div class="sub">Лидген для психологов</div>
-          <h3>Игра-диагностика</h3>
-          <p>Онлайн-игра как недорогой вход: человек анонимно проходит темы, раскрывает свой запрос — и игра сама предлагает следующие услуги специалиста.</p>
+          <div class="sub">Лидогенерация для психологов</div>
+          <h3>Игра, которая приводит клиентов</h3>
+          <p>Человек играет и по ходу игры сам понимает, что ему нужна помощь специалиста. Это недорогой первый шаг, после которого игра сама предлагает следующую услугу.</p>
           <ul>
-            <li>7 тем · 140 карточек: отношения, деньги, работа, семья</li>
-            <li>Групповой, индивидуальный и автоматический режимы</li>
-            <li>Модель переносится в любую нишу</li>
+            <li>7 тем и 140 карточек: отношения, деньги, работа, семья</li>
+            <li>Режимы: групповой, индивидуальный и автоматический</li>
+            <li>Механику можно перенести в любую нишу</li>
           </ul>
           <div class="links">
             <a class="lnk main" href="https://aevkone.github.io/igra-psy-demo/" target="_blank" rel="noopener">Сыграть в демо <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -669,63 +715,126 @@ body.has-spot #spot{opacity:1}
   </div>
 </section>
 
-<!-- 05 SUPPORT -->
-<section class="cat" id="support">
+<!-- 05 PROMO VIDEO -->
+<section class="cat" id="promo">
   <div class="wrap">
     <div class="cat-title">
       <span class="tag">05</span>
-      <div><h2 class="rv">Сопровождение: <span class="red">смыслы → продажи</span></h2>
-      <p class="rv d1">Для тех, кто не знает, как себя позиционировать, что продавать и по какой цене. Формируем основу и закладываем её в контент и всю структуру продвижения.</p></div>
+      <div><h2 class="rv">Промо-ролики <span class="red">с моушен-анимацией</span></h2>
+      <p class="rv d1">Вашу услугу сложно объяснить словами? Ролик объяснит её за минуту: что вы делаете, почему это ценно и почему стоит купить. Его досматривают, им делятся, его не стыдно показать инвестору.</p></div>
+    </div>
+    <div class="promo-grid">
+      <div class="promo-why rv">
+        <h3>Закажите ролик, если вам нужно</h3>
+        <div class="why-list">
+          <div><b>Донести суть</b><span>Сложная услуга становится понятной за 60 секунд.</span></div>
+          <div><b>Продать</b><span>Ролик снимает сомнения и ведёт зрителя к заявке.</span></div>
+          <div><b>Презентовать</b><span>Инвестору, партнёру, на выставке или со сцены.</span></div>
+          <div><b>Выделиться</b><span>Анимация в вашем стиле вместо скучных слайдов.</span></div>
+        </div>
+        <div class="chips"><span class="chip">9:16 для Reels и Shorts</span><span class="chip">16:9 для презентаций</span><span class="chip">Сценарий и смыслы — наши</span></div>
+        <a href="https://t.me/valeria_chirkova" class="btn btn-red" data-msg="Здравствуйте! Хочу заказать промо-ролик с моушен-анимацией.">Заказать ролик <span class="arr">→</span></a>
+      </div>
+      <figure class="vid vid-v rv">
+        <div class="vbox phone"><video src="video/promo-letopis.mp4" poster="img/poster-letopis.jpg" preload="none" playsinline controls></video><button class="vplay" type="button" aria-label="Смотреть ролик"><span></span></button></div>
+        <figcaption><b>Летопись рода</b>Промо для соцсетей · 42 сек · 9:16</figcaption>
+      </figure>
+      <figure class="vid vid-h rv">
+        <div class="vbox"><video src="video/promo-kontent-zavod.mp4" poster="img/poster-kz.jpg" preload="none" playsinline controls></video><button class="vplay" type="button" aria-label="Смотреть ролик"><span></span></button></div>
+        <figcaption><b>Контент-завод 2.0</b>Ролик для инвестора · 1 мин 40 сек · 16:9</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SUPPORT -->
+<section class="cat" id="support">
+  <div class="wrap">
+    <div class="cat-title">
+      <span class="tag">06</span>
+      <div><h2 class="rv">Сопровождение: <span class="red">от смыслов к продажам</span></h2>
+      <p class="rv d1">Не знаете, как себя подать, что продавать и сколько брать? Мы разберём это вместе с вами и встроим в контент и воронки. Вы перестаёте гадать и начинаете продавать.</p></div>
     </div>
     <div class="sopr">
       <div class="photo-stack rv">
-        <img class="p1" src="img/podcast.jpg" alt="Запись подкаста" loading="lazy">
-        <img class="p2" src="img/stage.jpg" alt="Валерия на сцене" loading="lazy">
+        <img class="p1" src="img/valeria_office.jpg" alt="Валерия Чиркова" loading="lazy">
+        <img class="p2" src="img/anton_studio.jpg" alt="Антон Кочергин" loading="lazy">
       </div>
       <div class="rv d1">
         <div class="flow">
-          <div><b><i>01</i>Позиционирование</b><span>Распаковка: кто вы, для кого, во что верите. Книга смыслов.</span></div>
-          <div><b><i>02</i>Продуктовая линейка</b><span>От недорогого входа до флагмана и сопровождения. Цены.</span></div>
-          <div><b><i>03</i>Маркетинг и SMM</b><span>Рубрики, хуки, контент-план, воронки, чат-боты, профили.</span></div>
-          <div><b><i>04</i>Система продвижения</b><span>Каналы, таргет, подкаст, коллаборации — и завод, который всё это выпускает.</span></div>
+          <div><b><i>01</i>Позиционирование</b><span>Кто вы, для кого и почему именно вы. Всё это — в вашей книге смыслов.</span></div>
+          <div><b><i>02</i>Продуктовая линейка</b><span>От недорогого первого шага до флагмана. Цены, которые не стыдно называть.</span></div>
+          <div><b><i>03</i>Маркетинг и SMM</b><span>Рубрики, цепляющие начала, контент-план, воронки, чат-боты.</span></div>
+          <div><b><i>04</i>Система продвижения</b><span>Каналы, таргет, подкаст и коллаборации. Завод выпускает всё это за вас.</span></div>
         </div>
-        <p style="color:var(--muted);font-size:14px">Кейс: психолог Юлия — за месяц собрали игру, сайт, подкаст, воронки и запустили завод. Продуктовая линейка: игра → консультации → ретриты → сопровождение.</p>
+        <p style="color:var(--muted);font-size:14px">Пример: психолог Юлия. За месяц собрали игру, сайт, подкаст и воронки и запустили завод. Её линейка теперь такая: игра → консультации → ретриты → сопровождение.</p>
         <div class="results">
-          <div class="res"><b>×2 прибыль</b><span>с 1 до 2 млн ₽/мес — предприниматель, проектирование</span></div>
-          <div class="res"><b>300 000 ₽</b><span>первая сделка в Дубае за первую неделю сопровождения</span></div>
-          <div class="res"><b>100–200k</b><span>просмотров у роликов блогера после внедрения завода</span></div>
+          <div class="res"><b>×2 прибыль</b><span>с 1 до 2 млн ₽ в месяц у предпринимателя в сфере проектирования</span></div>
+          <div class="res"><b>300 000 ₽</b><span>первая сделка в Дубае в первую же неделю сопровождения</span></div>
+          <div class="res"><b>100–200k</b><span>просмотров у роликов блогера после запуска завода</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 06 CUSTOM -->
+<!-- 07 BOOST -->
+<section class="cat" id="boost">
+  <div class="wrap">
+    <div class="cat-title">
+      <span class="tag">07</span>
+      <div><h2 class="rv">Чем ещё мы <span class="red">усилим ваш бизнес</span></h2>
+      <p class="rv d1">У нас за плечами 70+ подкастов, три собственные студии и живые мероприятия. Этот опыт будет работать на вас: вас начнут узнавать, вам начнут доверять, и клиенты будут приходить сами.</p></div>
+    </div>
+    <div class="boost">
+      <div class="bc rv">
+        <div class="im"><img src="img/podcast.jpg" alt="Запись подкаста" loading="lazy"></div>
+        <div class="tx"><span class="sub">Подкаст под ключ</span><h4>Вы — эксперт, которого слушают</h4><p>Записываем подкаст с вами в студии, со светом и звуком. Нарезаем короткие ролики для всех площадок.</p><div class="gain">Результат: доверие ещё до первого звонка</div></div>
+      </div>
+      <div class="bc rv d1">
+        <div class="im"><img src="img/breakfast.jpg" alt="Бизнес-завтрак" loading="lazy"></div>
+        <div class="tx"><span class="sub">Офлайн-мероприятие</span><h4>Ваши клиенты в одном зале</h4><p>Придумываем формат, собираем гостей, проводим встречу, бизнес-завтрак или конференцию.</p><div class="gain">Результат: живые знакомства и продажи на месте</div></div>
+      </div>
+      <div class="bc rv d2">
+        <div class="im"><img src="img/stage.jpg" alt="Выступление на сцене" loading="lazy"></div>
+        <div class="tx"><span class="sub">Выступление</span><h4>После речи к вам подходят сами</h4><p>Собираем речь, структуру и подачу, готовим к сцене, помогаем с позиционированием спикера.</p><div class="gain">Результат: заявки после каждого выхода на сцену</div></div>
+      </div>
+    </div>
+    <div class="boost-bar rv">
+      <div><b>Быстрее растёте</b><span>Месяцы вместо лет — опыт и связи уже есть</span></div>
+      <div><b>Сильнее позиция</b><span>Вы на виду и звучите как лидер своей ниши</span></div>
+      <div><b>Больше клиентов</b><span>Приходят по рекомендации, а не только с рекламы</span></div>
+      <a href="https://t.me/valeria_chirkova" class="btn btn-red" data-msg="Здравствуйте! Интересует подкаст / мероприятие / подготовка выступления.">Усилить мой бизнес <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 08 CUSTOM -->
 <section class="cat" id="custom">
   <div class="wrap">
     <div class="cat-title">
-      <span class="tag">06</span>
+      <span class="tag">08</span>
       <div><h2 class="rv">Любая IT-разработка <span class="red">под заказ</span></h2>
-      <p class="rv d1">Если готового решения нет — продумаем и сделаем. От идеи и логики до работающего продукта и плана, как его продавать.</p></div>
+      <p class="rv d1">Нет готового решения? Сделаем под вас и сразу продумаем, как на этом заработать.</p></div>
     </div>
     <div class="custom">
       <a class="cc rv" href="https://rentanalytic.ru/" target="_blank" rel="noopener">
         <div class="im"><img src="img/rent.jpg" alt="RentAnalytic" loading="lazy"></div>
-        <div class="tx"><h4>RentAnalytic</h4><p>SaaS-аналитика посуточной аренды: 13,8 млн замеров рынка в месяц, 118 городов, тарифы и онлайн-оплата. Работает в продакшне.</p><span class="lnk">rentanalytic.ru ↗</span></div>
+        <div class="tx"><h4>RentAnalytic</h4><p>Находит квартиры, которые выгодно сдавать посуточно. 13,8 млн замеров рынка в месяц, 118 городов, тарифы и онлайн-оплата. Работает и приносит деньги.</p><span class="lnk">rentanalytic.ru ↗</span></div>
       </a>
       <a class="cc rv d1" href="https://aevkone.github.io/moex-robot-demo/" target="_blank" rel="noopener">
         <div class="im"><img src="img/moex.jpg" alt="Панель торгового робота" loading="lazy"></div>
-        <div class="tx"><h4>Панель торгового робота</h4><p>Исследование стратегии для Мосбиржи: бэктест прямо в браузере, метрики и выводы простым языком.</p><span class="lnk">Открыть демо ↗</span></div>
+        <div class="tx"><h4>Панель торгового робота</h4><p>Проверяет стратегию для Мосбиржи прямо в браузере и объясняет результат простым языком.</p><span class="lnk">Открыть демо ↗</span></div>
       </a>
       <a class="cc rv d2" href="https://aevkone.github.io/svoi-club/" target="_blank" rel="noopener">
         <div class="im"><img src="img/svoi.jpg" alt="Мини-приложение клуба" loading="lazy"></div>
-        <div class="tx"><h4>Мини-приложение клуба</h4><p>Клуб «СВОИ»: подписка, запись на встречи и эфиры, сканирование состояния — в формате мобильного приложения.</p><span class="lnk">Открыть демо ↗</span></div>
+        <div class="tx"><h4>Мини-приложение клуба</h4><p>Клуб «СВОИ»: подписка, запись на встречи и эфиры — всё в одном приложении в телефоне.</p><span class="lnk">Открыть демо ↗</span></div>
       </a>
     </div>
     <div class="any rv">
       <div>
-        <h4>Есть идея или задача? <span class="red">Сделаем.</span></h4>
-        <p>Сервисы, кабинеты, боты, автоматизация с ИИ, внутренние системы — и сразу логика, как это продвигать и продавать.</p>
+        <h4>Есть идея? <span class="red">Сделаем.</span></h4>
+        <p>Расскажите, какую задачу нужно решить. Мы скажем, как это сделать, сколько это стоит и как это окупить.</p>
         <div class="tags-row"><span class="chip">Веб-сервисы и SaaS</span><span class="chip">Telegram-боты и мини-приложения</span><span class="chip">CRM и учёт</span><span class="chip">ИИ-автоматизация</span><span class="chip">Аналитика и дашборды</span></div>
       </div>
       <a href="#contact" class="btn btn-red" data-msg="Здравствуйте! Хочу обсудить разработку под заказ.">Обсудить разработку <span class="arr">→</span></a>
@@ -737,8 +846,8 @@ body.has-spot #spot{opacity:1}
 <section class="sec" id="team">
   <div class="wrap">
     <div class="sec-head">
-      <div><span class="eyebrow">Кто мы</span><h2 class="rv">Предприниматели-<br><span class="red">практики</span></h2></div>
-      <p class="rv d1">Всё, что мы предлагаем, сначала проверили на собственных бизнесах. Техническая и смысловая часть — в одной команде, поэтому они работают как единая система.</p>
+      <div><span class="eyebrow">Кто мы</span><h2 class="rv">Мы не теоретики, <span class="red">мы практики</span></h2></div>
+      <p class="rv d1">Каждый инструмент на этой странице сначала принёс деньги нам самим. За технологии и за смыслы отвечает одна команда, поэтому всё работает как единая система.</p>
     </div>
     <div class="team">
       <div class="person rv">
@@ -752,7 +861,7 @@ body.has-spot #spot{opacity:1}
             <li>Облачные сервисы и IT-разработка под ключ</li>
             <li>Архитектор Контент-завода</li>
           </ul>
-          <div class="mission">Отвечает за техническую часть: разработка, сборка заводов, производство и автопостинг.</div>
+          <div class="mission">Отвечает за техническую часть: разработку, сборку заводов, производство и автопостинг.</div>
         </div>
       </div>
       <div class="person rv d1">
@@ -765,14 +874,14 @@ body.has-spot #spot{opacity:1}
             <li>Ведущая 70+ подкастов в России и ОАЭ</li>
             <li>Бизнес-стратег: масштаб и рост онлайн и офлайн</li>
           </ul>
-          <div class="mission">Отвечает за смысловую часть: распаковка, книга смыслов, воронки продаж, чат-боты и визуал.</div>
+          <div class="mission">Отвечает за смыслы: распаковку, книгу смыслов, воронки продаж, чат-боты и визуал.</div>
         </div>
       </div>
     </div>
     <div class="timeline">
-      <div class="tl rv"><span class="y">2016 — 2025</span><h4>Рекламное производство «Ижтренд»</h4><b data-count="700" data-suf=" 000 ₽">0</b><p>средняя прибыль в месяц — с нуля. Свои площади и штат. Продано в 2025 году.</p></div>
+      <div class="tl rv"><span class="y">2016 — 2025</span><h4>Рекламное производство «Ижтренд»</h4><b data-count="700" data-suf=" 000 ₽">0</b><p>средняя прибыль в месяц, бизнес построен с нуля. Свои площади и штат. Продан в 2025 году.</p></div>
       <div class="tl rv d1"><span class="y">2022 — 2024</span><h4>Подкасты по всему миру</h4><b data-count="70" data-suf="+ интервью">0</b><p>в России и ОАЭ на коммерческой основе. Открыли 3 подкаст-студии Bravo в Москве.</p></div>
-      <div class="tl rv d2"><span class="y">2024 — 2026</span><h4>The Start Machine: ИИ-сервисы</h4><b data-count="600" data-suf=" 000 ₽">0</b><p>средняя прибыль в месяц Контент-завода — с нуля за 2 года. Продажи от Ижевска до Дубая.</p></div>
+      <div class="tl rv d2"><span class="y">2024 — 2026</span><h4>The Start Machine: ИИ-сервисы</h4><b data-count="600" data-suf=" 000 ₽">0</b><p>средняя прибыль Контент-завода в месяц. С нуля за 2 года, продажи от Ижевска до Дубая.</p></div>
     </div>
   </div>
 </section>
@@ -782,20 +891,26 @@ body.has-spot #spot{opacity:1}
   <div class="glow"></div>
   <div class="wrap">
     <h2 class="rv">Давайте обсудим<br><span class="red">ваш проект</span></h2>
-    <p class="lead rv d1">Выберите, что вам ближе — откроется Telegram с готовым сообщением. Расскажите о задаче, а мы предложим решение.</p>
+    <p class="lead rv d1">Напишите нам в Telegram, ответим лично. Подскажем, что из этого быстрее всего даст вам результат.</p>
     <div class="opts">
       <a class="opt rv" href="#" data-msg="Здравствуйте! Интересует готовая разработка The Start Machine. Хочу обсудить, что подойдёт мне.">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div>
-        <h4>Купить готовую разработку</h4><p>Контент-завод, Летопись рода, CRM, платформа обучения или игра.</p><span class="go">Написать <span class="arr">→</span></span></a>
+        <h4>Купить готовое решение</h4><p>Контент-завод, Летопись рода, CRM, платформа обучения или игра.</p><span class="go">Написать <span class="arr">→</span></span></a>
       <a class="opt rv d1" href="#" data-msg="Здравствуйте! Хочу заказать сайт. Расскажу о проекте.">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></div>
-        <h4>Заказать сайт</h4><p>Продающий сайт уровня thestartmachine.ru, с анимацией и заявками.</p><span class="go">Написать <span class="arr">→</span></span></a>
-      <a class="opt rv d2" href="#" data-msg="Здравствуйте! Интересует сопровождение: позиционирование, продуктовая линейка и продвижение.">
+        <h4>Заказать сайт</h4><p>Сайт уровня thestartmachine.ru, который приводит заявки.</p><span class="go">Написать <span class="arr">→</span></span></a>
+      <a class="opt rv d2" href="#" data-msg="Здравствуйте! Хочу заказать промо-ролик с моушен-анимацией.">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg></div>
+        <h4>Заказать промо-ролик</h4><p>Моушен-видео, которое объясняет и продаёт вашу услугу.</p><span class="go">Написать <span class="arr">→</span></span></a>
+      <a class="opt rv" href="#" data-msg="Здравствуйте! Интересует сопровождение: позиционирование, продуктовая линейка и продвижение.">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
         <h4>Заказать сопровождение</h4><p>Смыслы, позиционирование, продукты, цены, маркетинг и SMM.</p><span class="go">Написать <span class="arr">→</span></span></a>
-      <a class="opt rv d3" href="#" data-msg="Здравствуйте! Хочу обсудить индивидуальную разработку под мою задачу.">
+      <a class="opt rv d1" href="#" data-msg="Здравствуйте! Интересует подкаст / офлайн-мероприятие / подготовка выступления.">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></div>
+        <h4>Подкаст, мероприятие, выступление</h4><p>Чтобы вас узнали и вам начали доверять.</p><span class="go">Написать <span class="arr">→</span></span></a>
+      <a class="opt rv d2" href="#" data-msg="Здравствуйте! Хочу обсудить индивидуальную разработку под мою задачу.">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg></div>
-        <h4>Разработка под заказ</h4><p>Любой сервис, бот или система — индивидуально под вас.</p><span class="go">Написать <span class="arr">→</span></span></a>
+        <h4>Разработка под заказ</h4><p>Сервис, бот или система, сделанные под вашу задачу.</p><span class="go">Написать <span class="arr">→</span></span></a>
     </div>
     <p class="consent-note rv">Нажимая на кнопки этого раздела, вы переходите в Telegram. Отправляя нам сообщение, вы подтверждаете, что ознакомились с <a href="privacy.html">Политикой обработки персональных данных</a>, и даёте <a href="consent.html">Согласие на обработку персональных данных</a>.</p>
     <div class="big-cta rv"><a href="#" class="btn btn-red" data-msg="Здравствуйте! Мы познакомились лично — хочу обсудить свой проект.">Обсудить проект в Telegram <span class="arr">→</span></a></div>
@@ -878,7 +993,7 @@ body.has-spot #spot{opacity:1}
       if(inf)inf.classList.add(rev?'rv-l':'rv-r');
     });
     document.querySelectorAll('.pair .proj .media.rv').forEach(function(m){m.classList.remove('rv-l','rv-r');m.classList.add('rv-s')});
-    document.querySelectorAll('.dir.rv,.cc.rv,.tl.rv,.opt.rv,.res').forEach(function(e){e.classList.add('rv-s');if(!e.classList.contains('rv'))e.classList.add('rv')});
+    document.querySelectorAll('.dir.rv,.cc.rv,.tl.rv,.opt.rv,.res,.bc.rv,.vid.rv,.promo-why.rv').forEach(function(e){e.classList.add('rv-s');if(!e.classList.contains('rv'))e.classList.add('rv')});
     document.querySelectorAll('.person.rv').forEach(function(e,i){e.classList.add(i%2?'rv-r':'rv-l')});
     document.querySelectorAll('.photo-stack.rv').forEach(function(e){e.classList.add('rv-l')});
     document.querySelectorAll('.cat').forEach(function(c){
@@ -892,6 +1007,19 @@ body.has-spot #spot{opacity:1}
   document.querySelectorAll('[data-msg]').forEach(function(a){
     a.href=TG+'?text='+encodeURIComponent(a.getAttribute('data-msg'));
     a.target='_blank';a.rel='noopener';
+  });
+
+
+  // promo video play buttons
+  document.querySelectorAll('.vbox').forEach(function(b){
+    var v=b.querySelector('video'),btn=b.querySelector('.vplay');
+    if(!v||!btn)return;
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.vbox video').forEach(function(o){if(o!==v)o.pause()});
+      v.play();b.classList.add('playing');
+    });
+    v.addEventListener('play',function(){b.classList.add('playing')});
+    v.addEventListener('ended',function(){b.classList.remove('playing')});
   });
 
   // copy requisites
@@ -940,7 +1068,7 @@ body.has-spot #spot{opacity:1}
   setTimeout(function(){document.querySelectorAll('.stats [data-count]').forEach(count)},reduce?0:900);
 
   // typed rotating words
-  var words=['готовый бизнес','CRM для производства','платформу обучения','контент-завод','продающий сайт','игру-лидген','стратегию и смыслы','разработку под заказ'];
+  var words=['готовый бизнес','CRM для производства','платформу обучения','контент-завод','продающий сайт','промо-ролик','подкаст под ключ','офлайн-мероприятие','разработку под заказ'];
   var el=document.getElementById('typed'),wi=0,ci=words[0].length,del=true;
   if(!reduce){setTimeout(function tick(){
     var w=words[wi];
