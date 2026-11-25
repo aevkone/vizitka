@@ -456,6 +456,44 @@ body.has-spot #spot{opacity:1}
 }
 .no-io .rv,.no-io .rv-img,.no-io .proj,.no-io .person .ph{opacity:1;transform:none;filter:none;-webkit-clip-path:none;clip-path:none
 }
+
+/* ===== hero fit: CTA always above the fold ===== */
+.hero{align-items:flex-start;padding:clamp(80px,13vh,130px) 0 60px}
+.hero .wrap{align-items:start}
+.hero h1{font-size:clamp(32px,min(7vw,10.5vh),108px);line-height:1.02;margin:clamp(10px,2vh,20px) 0 clamp(14px,2.6vh,26px)}
+.hero .cta-row{margin:0 0 clamp(18px,3.4vh,34px);opacity:1;animation:none}
+.hero p.lead{font-size:clamp(15.5px,min(1.5vw,2.3vh),20px)}
+.hero .eyebrow{font-size:clamp(11px,1.6vh,13px)}
+.stack{margin-top:clamp(0px,6vh,60px)}
+@media (max-width:640px){
+  .hero{padding-top:clamp(74px,11vh,92px)}
+  .hero .cta-row .btn{flex:1 1 auto}
+}
+@media (max-width:400px){.hero h1{font-size:clamp(30px,min(10vw,7.2vh),40px)}}
+@media (max-height:520px) and (orientation:landscape){
+  .hero{padding-top:72px}
+  .hero h1{font-size:clamp(26px,9vh,48px);margin:6px 0 12px}
+  .hero .eyebrow{display:none}
+}
+
+/* ===== no horizontal scroll from slide-in animations ===== */
+.cat,.sec,.final,.marquee{overflow-x:hidden}
+@supports (overflow-x:clip){.cat,.sec,.final,.marquee{overflow-x:clip}}
+html{overflow-x:hidden}
+@supports (overflow-x:clip){html{overflow-x:clip}}
+@media (max-width:640px){.rv.rv-l{transform:translateX(-28px)}.rv.rv-r{transform:translateX(28px)}}
+
+/* ===== hero screenshots fill the right side (desktop) ===== */
+.stack .s4{display:none}
+@media (min-width:1021px){
+  .hero .wrap{grid-template-columns:1.05fr .95fr}
+  .stack{height:calc(100vh - clamp(80px,13vh,130px) - 40px);min-height:420px;max-height:760px;margin-top:0;align-self:start}
+  .stack .shot{width:74%}
+  .stack .s1{top:0;right:0;z-index:1}
+  .stack .s4{display:block;top:6%;left:0;width:56%;z-index:2;animation:bob 10s -3s ease-in-out infinite}
+  .stack .s2{top:34%;left:4%;right:auto;z-index:3}
+  .stack .s3{top:auto;bottom:4%;right:2%;z-index:4}
+}
 </style>
 </head>
 <body>
@@ -482,11 +520,11 @@ body.has-spot #spot{opacity:1}
     <div class="hero-left">
       <span class="eyebrow">The Start Machine · Антон Кочергин и Валерия Чиркова</span>
       <h1><span class="line"><span>Технологии,</span></span><span class="line"><span>которые</span></span><span class="line"><span class="red">приносят деньги</span></span></h1>
-      <p class="lead">Делаем IT-продукт и сразу продумываем, как он будет продаваться. Вам не нужно искать программиста, маркетолога и продюсера по отдельности. Всё делает одна команда.<br><br>Делаем для вас: <span class="typed" id="typed">готовый бизнес</span></p>
       <div class="cta-row">
         <a href="https://t.me/valeria_chirkova" class="btn btn-red" data-msg="Здравствуйте! Хочу обсудить свой проект с The Start Machine.">Обсудить проект <span class="arr">→</span></a>
         <a href="#map" class="btn btn-ghost">Смотреть проекты</a>
       </div>
+      <p class="lead">Делаем IT-продукт и сразу продумываем, как он будет продаваться. Вам не нужно искать программиста, маркетолога и продюсера по отдельности. Всё делает одна команда.<br><br>Делаем для вас: <span class="typed" id="typed">готовый бизнес</span></p>
       <div class="stats">
         <div class="stat"><b data-count="10" data-suf="+">0</b><span>бизнесов запустили с нуля</span></div>
         <div class="stat"><b><em data-count="600">0</em>k ₽</b><span>в месяц приносит нам Контент-завод</span></div>
@@ -498,6 +536,7 @@ body.has-spot #spot{opacity:1}
       <div class="shot s1"><img src="img/startmachine.jpg" alt=""></div>
       <div class="shot s2"><img src="img/crm_deals.jpg" alt=""></div>
       <div class="shot s3"><img src="img/roddrevo.jpg" alt=""></div>
+      <div class="shot s4"><img src="img/shkola_panel.jpg" alt=""></div>
     </div>
   </div>
   <div class="scrollhint"></div>
