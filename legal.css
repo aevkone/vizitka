@@ -1,0 +1,25 @@
+:root{--bg:#0b0b0d;--card:#16161a;--line:rgba(255,255,255,.09);--text:#f4f4f5;--muted:#a1a1aa;--red:#E4102B}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:Manrope,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.65}
+a{color:#ff8a98}
+.top{position:sticky;top:0;z-index:5;background:rgba(11,11,13,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .in{max-width:880px;margin:0 auto;padding:0 16px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.logo i{width:28px;height:28px;border-radius:8px;background:var(--red);display:grid;place-items:center}
+.logo i::after{content:"";border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:800;font-size:12px;letter-spacing:.05em;text-transform:uppercase;padding:10px 16px;border-radius:999px;white-space:nowrap}
+main{max-width:880px;margin:0 auto;padding:40px 16px 80px}
+.back{display:inline-block;margin-bottom:24px;color:var(--muted);text-decoration:none;font-size:14px}
+h1{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:clamp(28px,5vw,44px);line-height:1.08;margin-bottom:10px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:32px}
+h2{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:clamp(19px,2.6vw,23px);margin:34px 0 12px;line-height:1.2}
+p,li{color:#d4d4d8;margin-bottom:10px}
+ul,ol{padding-left:22px;margin-bottom:12px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:16px 0}
+.box p:last-child{margin-bottom:0}
+nav.docs{display:flex;flex-wrap:wrap;gap:8px;margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
+nav.docs a{font-size:14px;color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:8px 12px}
+nav.docs a:hover{border-color:var(--red)}
+@media (max-width:420px){.logo span{display:none}}
+@media print{body{background:#fff;color:#000}.top,nav.docs,.back{display:none}p,li{color:#000}.box{border-color:#999;background:none}a{color:#000}}
