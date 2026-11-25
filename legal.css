@@ -23,3 +23,4 @@ nav.docs a{font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:500;t
 nav.docs a:hover{border-color:var(--red)}
 @media (max-width:420px){.logo span{display:none}}
 @media print{body{background:#fff;color:#000}.top,nav.docs,.back{display:none}p,li{color:#000}.box{border-color:#999;background:none}a{color:#000}}
+p,li{text-align:justify;-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}

@@ -494,6 +494,21 @@ html{overflow-x:hidden}
   .stack .s2{top:34%;left:4%;right:auto;z-index:3}
   .stack .s3{top:auto;bottom:4%;right:2%;z-index:4}
 }
+
+/* ===== justified body text ===== */
+p,li,dd,.mission,.why-list span,.flow span,.boost-bar span,.res span,.tl p{text-align:justify;-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}
+.final .lead,.consent-note{text-align:justify;text-align-last:center}
+.stat span,.kpi span{-webkit-hyphens:manual;hyphens:manual}
+/* ===== mobile: hero centered ===== */
+@media (max-width:640px){
+  .hero-left{text-align:center}
+  .hero .eyebrow{justify-content:center}
+  .hero .eyebrow::before{display:none}
+  .hero h1 .line{text-align:center}
+  .hero .cta-row{justify-content:center}
+  .hero p.lead{margin-left:auto;margin-right:auto;text-align:justify;text-align-last:center}
+  .stat{text-align:left}
+}
 </style>
 </head>
 <body>
